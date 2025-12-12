@@ -1,4 +1,4 @@
-import { Eye, Heart, ScanHeart, Sparkles, TrendingUp, Zap } from "lucide-react";
+import { Heart, ScanHeart, Sparkles, TrendingUp, Zap } from "lucide-react";
 import NewsLetter from "../features/newsletter";
 
 const features = [

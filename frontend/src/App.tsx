@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import Home from "./pages/home"
 import Navbar from "./features/navbar"
 import Footer from "./features/footer"
+import CheckSymptoms from "./pages/check-symptoms"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/check-symptoms" element={<CheckSymptoms />} />
 
         {/* <Route path="/app" element={<Layout />}>
           <Route index element={<Dashboard />} />

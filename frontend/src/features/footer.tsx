@@ -1,6 +1,5 @@
 import {
   Facebook,
-  FileText,
   Github,
   Instagram,
   Linkedin,
