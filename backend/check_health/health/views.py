@@ -46,11 +46,27 @@ def check_symptom(request):
 
     ai_response = response.choices[0].message.content
 
+    health_check = HealthCheck.objects.create(
+      age=data.get("age"),
+      gender=data.get("gender"),
+      symptoms=data.get("symptoms"),
+      days_noticed=data.get("daysNoticed"),
+      medical_history=data.get("medicalHistory"),
+      medications=data.get("medications"),
+      fitness_level=data.get("fitnessLevel"),
+      hygiene_level=data.get("hygieneLevel"),
+      sleep_hours=data.get("sleepHours"),
+      stress_level=data.get("stressLevel"),
+      water_intake=data.get("waterIntake"),
+      extra_details=data.get("extraDetails"),
+      ai_result=ai_result,
+    )
     return Response(
       {
         "success": True,
-        "message": "Health insights generated successfully",
-        "insights": ai_response,
+        "message": "Health diagnosis generated successfully",
+        "diagnosis": ai_response,
+        "record_id": health_check.id
       },
       status=status.HTTP_200_OK,
     )

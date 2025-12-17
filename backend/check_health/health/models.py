@@ -20,6 +20,6 @@ class CheckSymptom(models.Model):
   water_intake = models.CharField(max_length=50)
   extra_notes = models.TextField(blank=True)
 
-  # ai_result = models.TextField(blank=True)
+  ai_result = models.TextField(blank=True)
 
   created_at = models.DateTimeField(auto_now_add=True)
