@@ -18,7 +18,7 @@ class CheckSymptom(models.Model):
   stress_level = models.CharField(max_length=50)
 
   water_intake = models.CharField(max_length=50)
-  extra_notes = models.TextField(blank=True)
+  extra_details = models.TextField(blank=True)
 
   ai_result = models.TextField(blank=True)
 
