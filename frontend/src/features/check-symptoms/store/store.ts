@@ -1,26 +1,12 @@
 import { create } from "zustand";
-
-interface HealthCheckData {
-  age: number;
-  gender: "male" | "female";
-  symptoms: string;
-  daysNoticed: number;
-  medicalHistory: string;
-  fitnessLevel: "low" | "medium" | "high";
-  hygieneLevel: "poor" | "average" | "good" | "excellent";
-  sleepHours: number;
-  stressLevel: "low" | "medium" | "high";
-  waterIntake: "very_low" | "low" | "moderate" | "high" | "very_high";
-  medications: string;
-  extraDetails: string;
-}
+import type { HealthCheckPayload } from "../validator/type";
 
 interface HealthCheckStore {
   currentStep: number;
   setStep: (step: number) => void;
 
-  data: HealthCheckData;
-  updateData: (field: keyof HealthCheckData, value: any) => void;
+  data: HealthCheckPayload;
+  updateData: (field: keyof HealthCheckPayload, value: any) => void;
 
   reset: () => void;
 }

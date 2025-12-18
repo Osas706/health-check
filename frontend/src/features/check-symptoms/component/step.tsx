@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import { Form } from "@/components/ui/form";
+import { Loader2 } from "lucide-react";
 
 interface StepProps<T extends z.ZodType<any, any>> {
   schema: T;
@@ -13,6 +14,7 @@ interface StepProps<T extends z.ZodType<any, any>> {
   isFirstStep?: boolean;
   currentStep: number;
   setStep: (step: number) => void;
+  loading?: boolean;
 }
 
 export function Step<T extends z.ZodType<any, any>>({
@@ -24,6 +26,7 @@ export function Step<T extends z.ZodType<any, any>>({
   isFirstStep = false,
   currentStep,
   setStep,
+  loading = false,
 }: StepProps<T>) {
   const form = useForm({
     resolver: zodResolver(schema) as any,
@@ -56,9 +59,10 @@ export function Step<T extends z.ZodType<any, any>>({
               <Button
                 type="submit"
                 variant={"default"}
-                className="ml-auto cursor-pointer"
+                className="ml-auto cursor-pointer disabled:opacity-80 flex items-center gap-2"
+                disabled={loading}
               >
-                {isLastStep ? `Submit ` : "Next"}
+                {isLastStep ? `Submit ` : "Next"}  {loading && <Loader2 className="h-4 w-4 animate-spin" />}
               </Button>
   
           </div>
