@@ -38,7 +38,7 @@ function Navbar() {
           </NavLink>
 
           <NavLink
-            to=""
+            to="/features"
             className={({ isActive }) => isActive ? "text-red-600 font-semibold" : "hover:text-red-600 transition"}
           >
             Features
