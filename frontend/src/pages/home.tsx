@@ -2,25 +2,25 @@ import { Heart, ScanHeart, Sparkles, TrendingUp, Zap } from "lucide-react";
 import NewsLetter from "../features/newsletter";
 
 const features = [
-      {
-        icon: <Sparkles color="#7F22FE" size={25} />,
-        bg: "bg-violet-100",
-        title: "Smart AI Assistance",
-        desc: "Use our A.I. to figure out what to do"
-      },
-      {
-        icon: <Heart color="#E11D48" size={25} />,
-        bg: "bg-rose-100",
-        title: "Health Monitoring",
-        desc: "Track symptoms, vitals, and health changes"
-      },
-      {
-        icon: <TrendingUp color="#0E7490" size={25} />,
-        bg: "bg-cyan-100",
-        title: "Progress & Trends",
-        desc: "Get insights about your health over time"
-      }
-    ]
+  {
+    icon: <Sparkles color="#7F22FE" size={25} />,
+    bg: "bg-violet-100",
+    title: "Smart AI Assistance",
+    desc: "Use our A.I. to figure out what to do",
+  },
+  {
+    icon: <Heart color="#E11D48" size={25} />,
+    bg: "bg-rose-100",
+    title: "Health Monitoring",
+    desc: "Track symptoms, vitals, and health changes",
+  },
+  {
+    icon: <TrendingUp color="#0E7490" size={25} />,
+    bg: "bg-cyan-100",
+    title: "Progress & Trends",
+    desc: "Get insights about your health over time",
+  },
+];
 
 function Home() {
   return (
@@ -56,24 +56,23 @@ function Home() {
 
         {/* features display */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 pb-18 ">
+          {features.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center justify-center w-full"
+            >
+              <div className={`p-4 aspect-square ${item.bg} rounded-full flex items-center justify-center`}>
+                {item.icon}
+              </div>
 
-         {
-  features.map((item, idx) => (
-      <div key={idx} className="flex flex-col items-center justify-center w-full">
-        <div className={`p-4 aspect-square ${item.bg} rounded-full flex items-center justify-center`}>
-          {item.icon}
-        </div>
-
-        <div className="mt-5 space-y-2 text-center">
-          <h3 className="text-base font-semibold text-slate-700">
-            {item.title}
-          </h3>
-          <p className="text-sm text-slate-600">
-            {item.desc}
-          </p>
-        </div>
-      </div>
-    ))}
+              <div className="mt-5 space-y-2 text-center">
+                <h3 className="text-base font-semibold text-slate-700">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-slate-600">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
