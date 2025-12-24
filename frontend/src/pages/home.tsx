@@ -55,7 +55,7 @@ function Home() {
 
               <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
                 Smart Healthcare <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-teal-600 to-blue-600">
                   Decoded by AI
                 </span>
               </h1>
@@ -106,7 +106,7 @@ function Home() {
                 <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-2000"></div>
 
                 {/* Main Image Container */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-[4/3] flex items-center justify-center group">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-4/3 flex items-center justify-center group">
                   <img
                     src="/medical_ai_hero.png" // We will ensure this path is correct
                     alt="AI Health Interface"
